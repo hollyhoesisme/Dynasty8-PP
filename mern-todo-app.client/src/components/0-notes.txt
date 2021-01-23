@@ -1,0 +1,27 @@
+Property Listing - an open unclaimed contract that contains the details for one particular property
+Property Title - a claimed contract that contains the details of the owner and the property.
+
+Database: House-Listings.dbo which contains all house listings and is to be unedited
+Need  to do a database join with the House-Listings.dbo and the Properties-Sold.dbo. That way we know which houses are sold or not.
+Post-join, if the resulting database has a House Owner, it is sold. Button should be [Create Listing] and have a House Owner populated
+Columns:
+ date_submitted: today,
+ property_address: '',
+ property_price: null,
+ property_description: '',
+ property_area: '',
+ property_gps_coordinates: coords,
+ showSubmissible: false,
+ isSubmissible: false,
+
+Transfers: Transfers should do two DB edits: 
+1) It should INSERT a transfer in Properties-Transferred.dbo from old/new ID, Home Owner. This is purely for history tracking.
+2) It should UPDATE the Properties-Sold.dbo to update the Home Owner and House ID
+
+Displays
+[Create Property Title][Edit]   1212 North Sheldon               x               Red house with a tall tree
+[Edit Property Title][Edit]    4532 South Mo Milton      Wayne Givens (154)     Pink house with a pink fence...
+
+[Create Property Title] should create a new listing and autopopulate the address and description EXCEPT Address and Description
+[Edit Property Title] should autopopulate all details, and make them editable EXCEPT Address and Description
+[Edit] Will modify the House-Listings. Should only show address and description.
